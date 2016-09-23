@@ -1,0 +1,234 @@
+public class Person {
+	
+		int age;
+		boolean gender;// false --> male, true --> female
+
+		Person(int age, boolean gender) {
+			this.age = age;
+			this.gender = gender;
+		
+	}
+
+	
+		 class Assignment2{// Assignment
+		/**
+		 * Write a Computer program to find the type of a person 
+		 * and print the type.
+		 * Infant : If the age is less than 1 year Toddler : 
+		 * If the age is less than 3 and greater than 1 Pre Schooler : 
+		 * If the age is less than 5 and greater than 3 KG Girl : 
+		 * If the age is greater than 5 and less than 6 and the
+		 * gender is female KG Boy : 
+	* If the age is greater than 5 and less than 6 and the gender is male
+		 */
+		public void personType(Person person) {
+			if ( person.age <= 1)
+			{System.out.println("Infant");}
+			if ( person.age <= 3 && person.age > 1)
+			{System.out.println("Toddler");}
+			if ( person.age <= 5 && person.age > 3)
+			{System.out.println("Pre Schooler");}
+			if ( person.age > 5 && person.age <= 6 && person.gender == true)
+			{System.out.println("KG Girl");}
+			if ( person.age > 5 && person.age <= 6 && person.gender == false)
+			{System.out.println("KG Boy");}
+			
+		}
+		
+		
+			 
+			}
+		
+			 
+			
+			
+
+	
+
+
+		/**
+		* Given an integer N as input, check the following: If N is odd, print
+		* "Weird". If N is even and, in between the range of 2 and 5(inclusive),
+ * print "Not Weird". If N is even and, in between the range of 6 and
+* 20(inclusive), print "Weird". If N is even and N>20, print "Not Weird".
+		*/
+			public void weirdNumber(int n) {
+				if( n % 2 != 0 )
+				{
+					System.out.println("Weird");
+				}
+				if ( n % 2 == 0 && n > 2 && n <= 5)
+				{
+					System.out.println("Not Weird");
+				}
+				if ( n % 2 == 0 && n > 6 && n <= 20)
+				{
+					System.out.println("Weird");
+				}
+				if ( n % 2 == 0 && n > 20)
+				{
+					System.out.println("Not Weird");	
+				}
+			}
+
+
+
+
+
+			
+		 /**
+			 * Write a method to determine whether a number is prime
+			 */
+			public void isPrime(int n) {
+                              boolean a = false;
+				if ( n == 1 )
+                              {System.out.println(“This is not a prime”);}
+				for ( int i = 2; i < n; i++ )
+				{
+				  if ( n % i == 0 )
+				  { a = false;
+                                  break;
+                                }
+				  else
+				  {
+                                 a = true;
+                                 }
+
+				}
+                              if ( a == true )
+                              {
+                               System.out.println(“This is a prime”);
+                              }
+                              else
+                              {
+                               System.out.println(“This is not a prime”);
+                              }
+			}
+
+
+
+
+
+			/**
+			 * Find N fibonacci numbers Fibonacci Number: f(N) = f(N-1)+f(N-2).
+			 * Typically, f(0)=f(1)=1.
+			 */
+			public int[] fibonacciNumber(int n) {
+				
+			    if ( n == 0 || n == 1)
+			    {return fibonacciNumber(1);}
+			    
+				return fibonacciNumber(n); 
+			}
+
+
+
+
+
+			/**
+			 * Write a function that takes a string as input and returns the string
+			 * reversed. Given s = "hello", return "olleh".
+			 */
+			public String reverseString(String s) {
+				
+			
+		     char b = 0;
+			for ( int i = s.length() - 1; i >= 0; i-- )
+			{
+				
+				
+                      b = s.charAt(i);
+               
+               
+				
+			}
+			System.out.print(b);
+	
+			return String.valueOf(b);
+			
+			
+			}
+
+
+			 
+				  
+
+			/**
+			 * Given an array of nums, write a function to find the largest two integer.
+			 */
+			public int[] findTheLargestTwo(int[] nums) {
+
+		int max = nums[0];
+		int max2 = nums[1];
+		if (nums[0] < nums[1]) {
+			max = nums[1];
+			max2 = nums[0];
+
+		}
+		for (int i = nums.length - 1; i > 1; i--) {
+			if (nums[i] >= max) {
+				max2 = max;
+				max = nums[i];
+
+			}
+			if (nums[i] < max && nums[i] > max2) {
+				max2 = nums[i];
+			}
+
+		}
+		int[] a = { max, max2 };
+		for (int j = 0; j < a.length; j++) {
+			System.out.println(a[j]);
+		}
+		return a;
+
+	}
+
+
+
+
+
+
+		 /**
+			 * Given a non-negative integer n, repeatedly add all its digits until the
+			 * result has only one digit. For example: Given n = 38, the process is
+			 * like: 3 + 8 = 11, 1 + 1 = 2. Since 2 has only one digit, return it.
+			 */
+				public int addDigits(int n) {
+				    int result;
+				    if ( n % 9 == 0 )
+				    {
+				    	return 9;
+				    }
+				    
+				    	result = n % 9;
+				    	return result;
+				    
+				}
+
+
+
+
+
+
+			/**
+			 * Write a program to check whether a given number is an ugly number. Ugly
+			 * numbers are positive numbers whose prime factors only include 2, 3, 5.
+			 * For example, 6, 8 are ugly, while 14 is not ugly since it includes
+			 * another prime factor 7. Note that 1 is typically treated as an ugly
+			 * number.
+			 */
+			public boolean isUgly(int n) {
+				
+				while ( n % 2 == 0)
+					n = n / 2;
+				while ( n % 3 == 0)
+					n = n / 3;
+				while ( n % 5 == 0)
+				    n = n / 5;
+				if ( n == 1 )
+					return true;
+				return false;
+			}
+
+		}	
